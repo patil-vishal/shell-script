@@ -1,0 +1,22 @@
+#!/bin/bash
+##create on Wed Oct 12 11:45:02 PDT 2016 ##
+## Author Vishal Patil ##
+##purpose to get server details##
+
+line="========================================================"
+cd /tmp/
+echo $line
+ip_add=$(ip r l | awk '/src/ { print $9}')
+host_name=$(hostname)
+#echo -e " server hostname is $(hostname)\n server IP address is $(ip r l | awk '/src/ { print $9}')"
+echo -e " hostname : $host_name\n IP address : $ip_add"
+echo $line
+cpu=$(grep -c processor /proc/cpuinfo)
+echo "Total core of CPU is : $cpu"
+echo $line
+mem=$(free -m | awk '/Mem/ {print $2}')
+echo "Total Memory of server : $mem MB "
+echo $line
+echo "Below is server OS details"
+echo  "$(cat /etc/issue)"
+echo
