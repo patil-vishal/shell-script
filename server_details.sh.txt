@@ -18,5 +18,5 @@ mem=$(free -m | awk '/Mem/ {print $2}')
 echo "Total Memory of server : $mem MB "
 echo $line
 echo "Below is server OS details"
-echo  "$(cat /etc/issue)"
-echo
+echo  "$(cat /etc/issue | awk 'NR<=2{print}')"
+echo $line
