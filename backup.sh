@@ -7,8 +7,8 @@ ddate=`date +%F`
 logs=/var/log/backup.log
 lock_file=/tmp/$0.lock
 
-read -p "Enter path for backup eg. /var/www :-" backup_path
-read -p "Enter what name you have to use for backu eg. abc or apache " backup_name
+read -p "Enter path of file for backup eg. /var/www :-" backup_path
+read -p "Enter backup file name eg. abc-bkp or apache-bkp " backup_name
 
 trap '{rm -rf $lock_file; exit 1;}' INT TERM
 
