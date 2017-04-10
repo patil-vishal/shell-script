@@ -21,7 +21,7 @@ echo 'gpgcheck=0' >> $repofile
 
 packages_copy () {
 mkdir /mnt2
-mount  /mnt2
+mount /dev/cdrom  /mnt2
 cp -r /mnt2/*.rpm /packages
 }
 
